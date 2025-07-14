@@ -32,7 +32,7 @@ class ErrorHandler:
 
         try:
             result = func(*args, **kwargs)
-            self.logger.info(f'✅ {full_name} completed successfully')
+            self.logger.info(f'{full_name} completed successfully')
             return result
         except Exception as e:
             self.logger.error(
@@ -43,6 +43,6 @@ class ErrorHandler:
             end_time = datetime.now()
             duration = end_time - start_time
             self.logger.info(
-                f'⏱️ Execution time: {duration.total_seconds():.2f} seconds'
+                f'Execution time: {duration.total_seconds():.4f} seconds'
             )
             self.logger.info('─' * 60)
