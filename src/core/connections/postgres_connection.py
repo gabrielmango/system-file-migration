@@ -22,7 +22,7 @@ class PostgresConnection(BaseComponent):
             self.logger.info('Connection to PostgreSQL closed.')
 
     def execute_query(self, query: str) -> list:
-        self.logger.info(f'Executing SELECT: {query}')
+        self.logger.info(f'Executing query...')
         try:
             result = self.connection.execute(text(query))
             columns = result.keys()
