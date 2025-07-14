@@ -11,3 +11,15 @@ class FileserverPostgresAcess(BaseConfig):
             'FILESERVER_POSTGRES_TST',
             'FILESERVER_POSTGRES_DEV',
         ]
+
+
+class CesvPostgresAcess(BaseConfig):
+    @property
+    def required_vars(self):
+        return [
+            'CESV_PROD',
+            'CESV_PREPROD',
+            'CESV_HML',
+            'CESV_TST',
+            'CESV_DEV',
+        ]
