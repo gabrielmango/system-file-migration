@@ -12,4 +12,4 @@ class PandasTransformer(BaseTransformer):
     def _merge_data(self, data, column):
         dfs = [pd.DataFrame(lines) for lines in data.values()]
 
-        return pd.merge(dfs[0], dfs[1], on=column, how='left').to_dict()
+        return pd.merge(dfs[0], dfs[1], on=column, how='left')

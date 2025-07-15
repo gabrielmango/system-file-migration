@@ -8,6 +8,6 @@ class BaseLoader(BaseComponent, ABC):
         super().__init__(name=name or self.__class__.__name__)
 
     @abstractmethod
-    def load(self, data, *args, **kwargs):
+    def load(self, *args, **kwargs):
         """Load data to a destination"""
         pass
