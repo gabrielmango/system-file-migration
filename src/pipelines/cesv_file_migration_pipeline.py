@@ -46,5 +46,8 @@ class CesvFileMigration(BasePipeline):
         return pandas_transformer.transform(data=data, column='co_uuid_2')
 
     def _load(self, data):
-        loader = PandasLoader()
-        loader.load(data=data)
+        self._load_data_to_fileserver_postgres(data)
+
+    def _load_data_to_fileserver_postgres(self, data):
+        pandas_loader = PandasLoader()
+        pandas_loader.load(data=data)
