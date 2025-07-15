@@ -8,6 +8,6 @@ class BaseTransformer(BaseComponent, ABC):
         super().__init__(name=name or self.__class__.__name__)
 
     @abstractmethod
-    def transform(self, data, *args, **kwargs):
+    def transform(self, *args, **kwargs):
         """Transform data"""
         pass

@@ -1,5 +1,6 @@
 from src.core.connections.postgres_connection import PostgresConnection
 from src.core.extractors.postgres_extractor import PostgresExtractor
+from src.core.transformers.pandas_transformer import PandasTransformer
 from src.pipelines.base_pipeline import BasePipeline
 from src.utils.config.postgres_acess import (CesvPostgresAcess,
                                              FileserverPostgresAcess)
@@ -40,7 +41,8 @@ class CesvFileMigration(BasePipeline):
         return extractor.extract(query=DATA_FILESERVER_QUERY)
 
     def _transform(self, data):
-        ...
+        pandas_transformer = PandasTransformer()
+        return pandas_transformer.transform(data=data, column='co_uuid_2')
 
     def _load(self, data):
         ...

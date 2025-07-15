@@ -4,8 +4,9 @@ from src.core.transformers.base_transformer import BaseTransformer
 
 
 class PandasTransformer(BaseTransformer):
-    def transform(self, data, *args, **kwargs):
+    def transform(self, *args, **kwargs):
         column = kwargs.get('column')
+        data = kwargs.get('data')
         return self._merge_data(data, column)
 
     def _merge_data(self, data, column):
