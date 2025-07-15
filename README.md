@@ -13,7 +13,7 @@ Python project to migrate files stored in MongoDB. This application enables the 
 ```bash
 # Clone the repository
 git clone https://github.com/gabrielmango/system-file-migration.git
-cd base-data-project
+cd system-file-migration
 
 # Install dependencies
 poetry install
