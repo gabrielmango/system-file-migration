@@ -8,3 +8,12 @@ LEFT JOIN cesv.tb_processo_seletivo t2
     ON t1.co_processo_seletivo = t2.co_seq_processo_seletivo
 ORDER BY t1.co_seq_candidatura DESC;
 """
+
+DATA_FILESERVER_QUERY = """
+select 
+	t1.co_seq_anexo, 
+	t1.co_uuid_2, 
+	t1.co_uuid_anexo_mongo 
+from fileserver.tb_anexo t1
+where t1.st_ativo;
+"""
