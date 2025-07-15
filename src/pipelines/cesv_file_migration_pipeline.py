@@ -18,8 +18,10 @@ class CesvFileMigration(BasePipeline):
         self._load(new_data)
 
     def _extract(self):
-        cesv_data = self._extract_data_from_cesv()
-        fileserver = self._extract_data_from_fileserver()
+        return {
+            'cesv': self._extract_data_from_cesv(),
+            'fileserver': self._extract_data_from_fileserver(),
+        }
 
     def _extract_data_from_cesv(self):
         postgres_conn = PostgresConnection(
